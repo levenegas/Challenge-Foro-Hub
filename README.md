@@ -17,38 +17,7 @@ Proyecto backend en **Java 17** con **Spring Boot 3.5.3** que permite:
 ---
 
 ## 📂 ESTRUCTURA DEL PROYECTO
-├── config
-│   ├── JacksonConfig.java
-│   ├── SecurityConfig.java
-├── controllers
-│   ├── ArticuloController.java
-│   ├── AuthController.java
-│   ├── UsuarioController.java
-├── DTOs
-│   ├── ArticuloRequest.java
-│   ├── ArticuloUpdateRequest.java
-├── exceptions
-│   ├── CustomExceptions.java
-│   ├── GlobalExceptionHandler.java
-├── profiles
-│   ├── Articulo.java
-│   ├── Rol.java
-│   ├── Usuario.java
-├── repository
-│   ├── ArticuloRepository.java
-│   ├── UsuarioRepository.java
-├── security
-│   ├── CustomUserDetails.java
-│   ├── CustomUserDetailsService.java
-│   ├── JwtAuthenticationFilter.java
-│   ├── JwtUtil.java
-├── services
-│   ├── ArticuloService.java
-│   ├── SecurityConfig.java
-│   ├── UsuarioService.java
-├── ForumsApplication.java
-├── Readme
-
+<img width="375" height="617" alt="image" src="https://github.com/user-attachments/assets/7833a316-e46b-43c3-a17b-79076e9140f2" />
 
 ---
 
@@ -120,6 +89,9 @@ spring.flyway.locations=classpath:db/migration
 
 # Clave secreta JWT codificada en Base64
 jwt.secret=ZXlKaGJHY2lPaUpJVXpJMU5pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SnpkV0lpT2lJeE1qTTBOVFkzT0Rrd0lpd2libUZ0WlNJNklrcHZhRzRnUkc5bElpd2lZV1J0YVc0aU9uUnlkV1VzSW1saGRDSTZNVGMxTXpJeE9EQXpNbjAuX1kxNzlpaFN3ZTdXbGNpdHJmQmxGbC1QZ3NWMi1fYnVXcHR0NnNCMDVkMA==
+
+---
+
 
 ## 🗄️ MIGRACIONES FLYWAY SQL
 V1__init_schema.sql
