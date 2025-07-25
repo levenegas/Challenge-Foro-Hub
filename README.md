@@ -69,32 +69,44 @@ Proyecto backend en **Java 17** con **Spring Boot 3.5.3** que permite:
 2. **Archivo `application.properties` o `application.yml`**  
    Configurar conexión y JWT secret:
 
-# Nombre de la aplicación
+3. **Nombre de la aplicación
 spring.application.name=forums
 
-# Configuración de la conexión a PostgreSQL
+4. **Configuración de la conexión a PostgreSQL
 spring.datasource.url=jdbc:postgresql://localhost:5432/forums
 spring.datasource.username=postgres
 spring.datasource.password=postgres123
 spring.datasource.driver-class-name=org.postgresql.Driver
 
-# Configuración JPA / Hibernate
+5. **Configuración JPA / Hibernate
 spring.jpa.hibernate.ddl-auto=validate
 spring.jpa.show-sql=true
 spring.jpa.properties.hibernate.format_sql=true
 
-# Flyway migraciones
+6. **Flyway migraciones
 spring.flyway.enabled=true
 spring.flyway.locations=classpath:db/migration
 
-# Clave secreta JWT codificada en Base64
+7. **Clave secreta JWT codificada en Base64
 jwt.secret=ZXlKaGJHY2lPaUpJVXpJMU5pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SnpkV0lpT2lJeE1qTTBOVFkzT0Rrd0lpd2libUZ0WlNJNklrcHZhRzRnUkc5bElpd2lZV1J0YVc0aU9uUnlkV1VzSW1saGRDSTZNVGMxTXpJeE9EQXpNbjAuX1kxNzlpaFN3ZTdXbGNpdHJmQmxGbC1QZ3NWMi1fYnVXcHR0NnNCMDVkMA==
 
 ---
 
+📦 Dependencias principales (pom.xml)
+Incluye:
+- Spring Boot Starter Web: API REST
+- Spring Data JPA: acceso a base de datos con Hibernate
+- PostgreSQL Driver
+- Spring Security + Crypto: seguridad y hashing de contraseñas
+- jjwt (io.jsonwebtoken): gestión de tokens JWT
+- Flyway: migraciones de base de datos
+- Lombok: reducción de código boilerplate
+- Hibernate Validator: validación de datos
+
+---
 
 ## 🗄️ MIGRACIONES FLYWAY SQL
-V1__init_schema.sql
+1. **V1__init_schema.sql
 -- Crear tabla de usuarios
 CREATE TABLE usuario (
     id BIGSERIAL PRIMARY KEY,
@@ -111,13 +123,13 @@ CREATE TABLE articulo (
     CONSTRAINT fk_articulo_usuario FOREIGN KEY (author_id) REFERENCES usuario (id)
 );
 
-V2__add_rol.sql
+2. **V2__add_rol.sql
 -- Agregar columna 'rol' a tabla usuario con valor por defecto 'USER'
 ALTER TABLE usuario
 ADD COLUMN rol VARCHAR(10) NOT NULL DEFAULT 'USER';
 V3__add_usuario_id_to_articulo.sql
 
-V3__add_usuario_id_to_articulo.sql
+3. **V3__add_usuario_id_to_articulo.sql
 (Si en V1 ya está la columna author_id, esta migración puede ser para reforzar la clave foránea o para otras modificaciones, ejemplo:)
 -- Asegurar constraint de clave foránea en articulo
 ALTER TABLE articulo
